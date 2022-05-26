@@ -74,3 +74,34 @@ luckyNumbers.filter({ !$0.isMultiple(of: 2) })
     .sorted(by: { $0 < $1 })
     .map({ "\($0) is lucky number" })
     .forEach({ print($0) })
+
+// Checkpoint 6. Day 10 & 11
+
+struct Car {
+    private let model: String
+    private let numberOfSeats: Int
+    private var currentGear: Int
+    
+    init?(model: String, numberOfSeats: Int, currentGear: Int) {
+        guard currentGear >= 1 && currentGear <= 10 else { return nil }
+        self.model = model
+        self.numberOfSeats = numberOfSeats
+        self.currentGear = currentGear
+    }
+    
+    mutating func gearUp(by value: Int) {
+        guard currentGear + value <= 10 else { return }
+        currentGear += value
+    }
+    
+    mutating func gearDown(by value: Int) {
+        guard currentGear - value >= 1 else { return }
+        currentGear -= value
+    }
+    
+}
+
+var mercedes = Car(model: "Mercedes", numberOfSeats: 4, currentGear: 5)
+mercedes?.gearUp(by: 4)
+mercedes?.gearDown(by: 3)
+print(mercedes!)
