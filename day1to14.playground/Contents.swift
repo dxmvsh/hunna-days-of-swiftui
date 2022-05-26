@@ -105,3 +105,63 @@ var mercedes = Car(model: "Mercedes", numberOfSeats: 4, currentGear: 5)
 mercedes?.gearUp(by: 4)
 mercedes?.gearDown(by: 3)
 print(mercedes!)
+
+// Checkpoint 7. Day 12
+
+class Animal {
+    private let legs: Int
+    
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+class Dog: Animal {
+    func speak() {
+        print("Barks")
+    }
+}
+
+class Corgi: Dog {
+    override func speak() {
+        print("Barks in Corgish")
+    }
+}
+
+class Poodle: Dog {
+    override func speak() {
+        print("Barks in Poodle-ish")
+    }
+}
+
+class Cat: Animal {
+    private let isTame: Bool
+    
+    init(legs: Int, isTame: Bool) {
+        self.isTame = isTame
+        super.init(legs: legs)
+    }
+    
+    func speak() {
+        print("Meows")
+    }
+}
+
+class Persian: Cat {
+    override func speak() {
+        print("Meows in Persian")
+    }
+}
+
+class Lion: Cat {
+    override func speak() {
+        print("Meows in Lion-ish")
+    }
+}
+
+let lion = Lion(legs: 4, isTame: true)
+lion.speak()
+let persian = Persian(legs: 4, isTame: false)
+persian.speak()
+let poodle = Poodle(legs: 4)
+poodle.speak()
