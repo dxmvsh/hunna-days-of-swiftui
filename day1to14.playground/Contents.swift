@@ -30,3 +30,38 @@ for number in 1...100 {
         print(number)
     }
 }
+
+// Checkpoint 4. Day 7 & 8
+enum SquareRootError: Error {
+    case outOfBounds
+    case noRoot
+}
+
+func squareRoot(of number: Int) throws -> Int {
+    guard number >= 1 && number <= 10_000 else {
+        throw SquareRootError.outOfBounds
+    }
+    
+    for result in 1...number {
+        if result * result == number {
+            return result
+        }
+    }
+    
+    throw SquareRootError.noRoot
+}
+
+do {
+    print(try squareRoot(of: 4))
+    print(try squareRoot(of: 144))
+    print(try squareRoot(of: 5))
+} catch {
+    switch error {
+    case SquareRootError.outOfBounds:
+        print("Out of bounds")
+    case SquareRootError.noRoot:
+        print("No root")
+    default:
+        print("Other error occurred")
+    }
+}
