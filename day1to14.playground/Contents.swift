@@ -165,3 +165,40 @@ let persian = Persian(legs: 4, isTame: false)
 persian.speak()
 let poodle = Poodle(legs: 4)
 poodle.speak()
+
+// Checkpoint 8. Day 13
+protocol Building {
+    var rooms: Int { get set }
+    var cost: Int { get set }
+    var estateAgentName: String { get set }
+    func summary() -> String
+}
+
+extension Building {
+    func summary() -> String {
+        return "Building from estate agent \(estateAgentName) with \(rooms) \(rooms == 1 ? "room" : "rooms") costs $\(cost)"
+    }
+}
+
+struct House: Building {
+    var rooms: Int
+    var cost: Int
+    var estateAgentName: String
+    
+}
+
+struct Office: Building {
+    var rooms: Int
+    var cost: Int
+    var estateAgentName: String
+    
+    func summary() -> String {
+        return "Office from estate agent \(estateAgentName) with \(rooms) \(rooms == 1 ? "room" : "rooms") costs $\(cost)"
+    }
+}
+
+let office = Office(rooms: 2, cost: 20_000, estateAgentName: "Big Group")
+let house = House(rooms: 4, cost: 20_000_000, estateAgentName: "Even Bigger Group")
+
+house.summary()
+office.summary()
