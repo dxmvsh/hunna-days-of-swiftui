@@ -202,3 +202,12 @@ let house = House(rooms: 4, cost: 20_000_000, estateAgentName: "Even Bigger Grou
 
 house.summary()
 office.summary()
+
+// Checkpoint 9. Day 14
+
+func getRandomNumber(from array: [Int]?) -> Int {
+    return array?.randomElement() ?? Int.random(in: 1...100)
+}
+
+getRandomNumber(from: nil)
+getRandomNumber(from: [1, 4, 7])
