@@ -63,17 +63,18 @@ enum LengthUnit: CaseIterable, Equatable {
                 return value * 1609.344
             }
         }
-        switch self {
+        
+        switch unit {
         case .meter:
             return convert(value: value, to: .meter)
         case .kilometer:
             return convert(value: value, to: .meter) * 1000
         case .feet:
-            return convert(value: value, to: .meter) * 0.3048
+            return convert(value: value, to: .meter) * 3.28084
         case .yard:
-            return convert(value: value, to: .meter) * 0.9144
+            return convert(value: value, to: .meter) * 1.09361
         case .mile:
-            return convert(value: value, to: .meter) * 1609.344
+            return convert(value: value, to: .meter) * 0.000621371
         }
     }
 }
