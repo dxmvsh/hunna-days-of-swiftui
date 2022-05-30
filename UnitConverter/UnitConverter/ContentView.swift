@@ -9,14 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let units: [LengthUnit] = LengthUnit.allCases
+    private let units: [LengthUnit] = LengthUnit.allCases
+    private let converter = LengthUnitConverter()
+    
+    @State private var inputValue = 0.0
     @State private var inputSelectedUnit = LengthUnit.kilometer
     @State private var outputSelectedUnit = LengthUnit.meter
     
-    @State private var inputValue = 0.0
+    @FocusState private var inputIsFocused: Bool
+    
     private var outputValue: Double {
-        inputSelectedUnit.convert(
+        converter.convert(
             value: inputValue,
+            from: inputSelectedUnit,
             to: outputSelectedUnit
         )
     }
@@ -30,6 +35,7 @@ struct ContentView: View {
             Form {
                 Section {
                     TextField("Input Value", value: $inputValue, format: .number)
+                        .focused($inputIsFocused)
                     Picker("Input Source Unit", selection: $inputSelectedUnit) {
                         ForEach(units, id: \.self) { element in
                             Text(element.symbol)
@@ -51,7 +57,16 @@ struct ContentView: View {
                     Text("Output Value")
                 }
             }
+            .keyboardType(.decimalPad)
             .navigationTitle("UnitConverter")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        inputIsFocused = false
+                    }
+                }
+            }
         }
     }
 }

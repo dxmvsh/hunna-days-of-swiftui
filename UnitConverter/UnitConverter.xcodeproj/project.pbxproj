@@ -12,6 +12,7 @@
 		7415629E2843A002005808D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7415629D2843A002005808D4 /* Assets.xcassets */; };
 		741562A12843A002005808D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741562A02843A002005808D4 /* Preview Assets.xcassets */; };
 		741562A82843A0DE005808D4 /* LengthUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741562A72843A0DE005808D4 /* LengthUnit.swift */; };
+		7498C6742845074D008C4273 /* LengthUnitConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498C6732845074D008C4273 /* LengthUnitConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		7415629D2843A002005808D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		741562A02843A002005808D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		741562A72843A0DE005808D4 /* LengthUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthUnit.swift; sourceTree = "<group>"; };
+		7498C6732845074D008C4273 /* LengthUnitConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthUnitConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +55,12 @@
 		741562982843A000005808D4 /* UnitConverter */ = {
 			isa = PBXGroup;
 			children = (
+				7415629F2843A002005808D4 /* Preview Content */,
 				741562992843A000005808D4 /* UnitConverterApp.swift */,
 				7415629B2843A000005808D4 /* ContentView.swift */,
-				7415629D2843A002005808D4 /* Assets.xcassets */,
-				7415629F2843A002005808D4 /* Preview Content */,
+				7498C6732845074D008C4273 /* LengthUnitConverter.swift */,
 				741562A72843A0DE005808D4 /* LengthUnit.swift */,
+				7415629D2843A002005808D4 /* Assets.xcassets */,
 			);
 			path = UnitConverter;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				741562A82843A0DE005808D4 /* LengthUnit.swift in Sources */,
 				7415629C2843A000005808D4 /* ContentView.swift in Sources */,
+				7498C6742845074D008C4273 /* LengthUnitConverter.swift in Sources */,
 				7415629A2843A000005808D4 /* UnitConverterApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
