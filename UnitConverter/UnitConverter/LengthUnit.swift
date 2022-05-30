@@ -44,37 +44,4 @@ enum LengthUnit: CaseIterable, Equatable {
         }
     }
     
-    func convert(value: Double, to unit: LengthUnit) -> Double {
-        guard self != unit else {
-            return value
-        }
-        
-        if unit == .meter {
-            switch self {
-            case .meter:
-                return value
-            case .kilometer:
-                return value * 1000
-            case .feet:
-                return value * 0.3048
-            case .yard:
-                return value * 0.9144
-            case .mile:
-                return value * 1609.344
-            }
-        }
-        
-        switch unit {
-        case .meter:
-            return convert(value: value, to: .meter)
-        case .kilometer:
-            return convert(value: value, to: .meter) * 1000
-        case .feet:
-            return convert(value: value, to: .meter) * 3.28084
-        case .yard:
-            return convert(value: value, to: .meter) * 1.09361
-        case .mile:
-            return convert(value: value, to: .meter) * 0.000621371
-        }
-    }
 }
