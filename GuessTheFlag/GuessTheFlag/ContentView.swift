@@ -12,7 +12,10 @@ struct ContentView: View {
     @State var correctAnswer = Int.random(in: 0...2)
 
     @State private var showingScore = false
+    @State private var showingGameOverAlert = false
     @State private var scoreTitle = ""
+    @State private var score = 0
+    @State private var currentQuestion = 0
     
     var body: some View {
         ZStack {
@@ -50,7 +53,7 @@ struct ContentView: View {
                     }
                 }
                 Spacer()
-                Text("Score ???")
+                Text("Score \(score)")
                     .foregroundColor(.white)
                     .font(.title.bold())
                 Spacer()
@@ -60,19 +63,29 @@ struct ContentView: View {
         }
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue", action: askQuestion)
+        }
+        .alert("Game Over", isPresented: $showingGameOverAlert) {
+            Button("Restart", action: restartGame)
         } message: {
-            Text("Your score is ???")
+            Text("Your score is: \(score)/8")
         }
     }
     
     func flagTapped(_ index: Int) {
         if index == correctAnswer {
+            score += 1
             scoreTitle = "Correct"
         } else {
-            scoreTitle = "Wrong"
+            scoreTitle = "Wrong! That's the flag of \(countries[index])"
+        }
+        
+        if currentQuestion == 7 {
+            showingGameOverAlert = true
+            return
         }
         
         showingScore = true
+        currentQuestion += 1
     }
     
     func askQuestion() {
@@ -80,6 +93,11 @@ struct ContentView: View {
         correctAnswer = Int.random(in: 0...2)
     }
     
+    private func restartGame() {
+        score = 0
+        currentQuestion = 0
+        askQuestion()
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
