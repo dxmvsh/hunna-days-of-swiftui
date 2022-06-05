@@ -11,6 +11,7 @@
 		741562822842B5AE005808D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741562812842B5AE005808D4 /* ContentView.swift */; };
 		741562842842B5B0005808D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741562832842B5B0005808D4 /* Assets.xcassets */; };
 		741562872842B5B0005808D4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 741562862842B5B0005808D4 /* Preview Assets.xcassets */; };
+		74DCED63284CFE6F00D91835 /* TextViewBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DCED62284CFE6F00D91835 /* TextViewBackgroundModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		741562812842B5AE005808D4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		741562832842B5B0005808D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		741562862842B5B0005808D4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74DCED62284CFE6F00D91835 /* TextViewBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewBackgroundModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				741562812842B5AE005808D4 /* ContentView.swift */,
 				741562832842B5B0005808D4 /* Assets.xcassets */,
 				741562852842B5B0005808D4 /* Preview Content */,
+				74DCED62284CFE6F00D91835 /* TextViewBackgroundModifier.swift */,
 			);
 			path = WeSplit;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				741562822842B5AE005808D4 /* ContentView.swift in Sources */,
+				74DCED63284CFE6F00D91835 /* TextViewBackgroundModifier.swift in Sources */,
 				741562802842B5AE005808D4 /* WeSplitApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
