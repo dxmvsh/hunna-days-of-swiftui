@@ -11,6 +11,8 @@
 		7498C68428453842008C4273 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7498C68328453842008C4273 /* ContentView.swift */; };
 		7498C68628453843008C4273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7498C68528453843008C4273 /* Assets.xcassets */; };
 		7498C68928453843008C4273 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7498C68828453843008C4273 /* Preview Assets.xcassets */; };
+		74DCED65284D001700D91835 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DCED64284D001700D91835 /* FlagImage.swift */; };
+		74DCED67284D00BD00D91835 /* LargeBlueTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74DCED66284D00BD00D91835 /* LargeBlueTitleModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		7498C68328453842008C4273 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7498C68528453843008C4273 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7498C68828453843008C4273 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		74DCED64284D001700D91835 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
+		74DCED66284D00BD00D91835 /* LargeBlueTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeBlueTitleModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				7498C68128453842008C4273 /* GuessTheFlagApp.swift */,
+				74DCED66284D00BD00D91835 /* LargeBlueTitleModifier.swift */,
+				74DCED64284D001700D91835 /* FlagImage.swift */,
 				7498C68328453842008C4273 /* ContentView.swift */,
 				7498C68528453843008C4273 /* Assets.xcassets */,
 				7498C68728453843008C4273 /* Preview Content */,
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7498C68428453842008C4273 /* ContentView.swift in Sources */,
+				74DCED65284D001700D91835 /* FlagImage.swift in Sources */,
 				7498C68228453842008C4273 /* GuessTheFlagApp.swift in Sources */,
+				74DCED67284D00BD00D91835 /* LargeBlueTitleModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
