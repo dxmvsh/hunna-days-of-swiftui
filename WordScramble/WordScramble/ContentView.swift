@@ -40,12 +40,21 @@ struct ContentView: View {
                         }
                     }
                 }
+                Section("Score") {
+                    HStack(alignment: .center) {
+                        Text("\(usedWords.count)")
+                    }
+                }
             }
             .navigationTitle(rootWord)
+            .toolbar {
+                Button("Restart", action: startGame)
+            }
         }
     }
     
     func startGame() {
+        usedWords = []
         if let startWordsURL = Bundle.main.url(forResource: "start", withExtension: "txt") {
             if let startWords = try? String(contentsOf: startWordsURL) {
                 let allWords = startWords.components(separatedBy: "\n")
@@ -69,6 +78,20 @@ struct ContentView: View {
         }
         guard isReal(word: word) else {
             wordError(title: "Word not recognized", message: "You can't just make them up, you know!")
+            return
+        }
+        guard word != rootWord else {
+            wordError(
+                title: "Same word",
+                message: "You can't set the same word"
+            )
+            return
+        }
+        guard hasAtLeastThreeCharacters(word: word) else {
+            wordError(
+                title: "Word length",
+                message: "Word should contain at least 3 characters"
+            )
             return
         }
         withAnimation {
@@ -106,6 +129,10 @@ struct ContentView: View {
             language: "en"
         )
         return misspelledRange.location == NSNotFound
+    }
+    
+    func hasAtLeastThreeCharacters(word: String) -> Bool {
+        word.count >= 3
     }
     
     func wordError(title: String, message: String) {
